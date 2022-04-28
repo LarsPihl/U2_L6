@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>1ME322, Laboration 6 – Validering av formulär</title>
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>1ME322 Webbteknik 2</h1>
+		<h3>Laboration 6 – Validering av formulär</h3>
+	</header>
+	<main>
+		<h2>Pensionat Sjöstugan</h2>
+		<h3>Förfrågan om rumsbokning</h3>
+		<form id="booking" method="POST">
+			<!-- Formuläret skickas inte i detta exempel. 
+				 Användas Netlifys formulärtjänst ska form-taggen innehålla data-netlify="true".
+				 Annars specificeras program för hantering av formuläret i ett action-attribut. -->
+			<fieldset id="room">
+				<legend>Val av rum</legend>
+				<div>
+					<label>
+						<input type="radio" name="roomType" value="enkel"> Enkelrum
+					</label>
+					<label>
+						<input type="radio" name="roomType" value="dubbel" checked> Dubbelrum
+					</label>
+					<label>
+						<input type="radio" name="roomType" value="familj"> Familjerum
+					</label>
+					<label> --- Antal personer 
+						<select name="persons">
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+						</select> (anges endast för famlijerum)
+					</label>
+				</div>
+			</fieldset>
+			<fieldset id="date">
+				<legend>Datum och antal nätter</legend>
+				<div>
+					<label>
+						* Ankomstdag <input type="date" name="arrival" required>
+					</label>
+					<label>
+						* Antal nätter
+						<select name="nrOfNights">
+							<option value="1" selected>1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">1 vecka</option>
+							<option value="14">2 veckor</option>
+						</select>
+					</label>
+				</div>
+			</fieldset>
+			<fieldset id="additions">
+				<legend>Tillägg</legend>
+				<div>
+					<label>
+						<input type="checkbox" name="extra" value="internet"> Internet
+					</label>
+					<label>
+						<input type="checkbox" name="extra" value="parkering"> Parkering
+					</label>
+					<label>
+						<input type="checkbox" name="extra" value="sjöutsikt"> Sjöutsikt
+					</label>
+					<p>Kostnader per dygn.</p>
+				</div>
+			</fieldset>
+			<fieldset id="total">
+				<legend>Total kostnad</legend>
+				<p>Dina val ger en kostnad på <span id="totalCost">0</span> kr.</p>
+			</fieldset>
+			<fieldset id="campaign">
+				<legend>Kampanj</legend>
+				<label>Om du har en kampanjkod, anger du den här
+					<input type="text" name="campaigncode" id="campaigncode"> <!--Lade till ett id för inmatningen.-->
+				</label>
+			</fieldset>
+			<fieldset id="customer">
+				<legend>Kund</legend>
+				<div>
+					<label for="name">* Namn</label>
+						<input type="text" id="name" name="name" required>
+					<label for="street">Gatuadress</label>
+						<input type="text" id="street" name="street">
+					<label for="zipcode">Postnummer</label>
+						<div>
+							<input type="text" id="zipcode" name="zipcode">
+							<span></span> <!-- Element för felmeddelande-->
+						</div>
+					<label for="city">Ort</label>
+						<input type="text" id="city" name="city">
+					<label for="telephone">Telefon</label>
+						<div>
+							<input type="text" id="telephone" name="telephone">
+							<span></span> <!-- Element för felmeddelande-->
+						</div>
+					<label for="email">* E-post</label>
+						<input type="text" id="email" name="email" required>
+				</div>
+			</fieldset>
+			<div id="send">
+				<input type="submit" value="Skicka förfrågan">
+			</div>
+		</form>
+	</main>
+	<footer>
+		<p>Laboration 6 i 1ME322 Webbdteknik 2 på Linnéuniversitetet</p>
+	</footer>
+</body>
+</html>

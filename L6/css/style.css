@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+#booking {
+    padding: 20px;
+}
+
+#booking fieldset {
+    background-color: #FED;
+    margin-bottom: 20px;
+}
+#booking legend {
+    font-weight: bold;
+
+}
+#booking fieldset div {
+    display: grid;
+    gap: 0.6em;
+    white-space: nowrap;
+}
+
+#room div {
+    grid-template-columns: min-content auto;
+}
+#room label {
+    grid-column: 1/2;
+}
+#room label:last-of-type {
+    grid-column: 2/3;
+}
+
+#date div {
+    grid-template-columns: 1fr 1fr;
+}
+
+#additions p {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+#customer div {
+    grid-template-columns: min-content auto;
+}
+#customer input {
+    max-width: 40ch;
+}
+#customer #zipcode {
+    max-width: 6ch;
+}
+#customer span {
+    color: #D11;
+    font-size: 0.8em;
+}
+
+#send {
+    text-align: right;
+}
